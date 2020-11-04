@@ -3,6 +3,46 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, switchMap, takeUntil } from 'rxjs/operators';
 import { gsap, Power3 } from 'gsap/all';
 import { Subject } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { gsap, ScrollToPlugin } from 'gsap/all';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+
+/*
+==================
+    AppModule
+==================
+*/
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollToPlugin);
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot([], {
+      anchorScrolling: 'disabled',
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: 'enabled'
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+
+/*
+====================
+    AppComponent
+====================
+*/
 
 @Component({
   selector: 'app-root',
