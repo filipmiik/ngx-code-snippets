@@ -6,7 +6,6 @@ import { Subject } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { gsap, ScrollToPlugin } from 'gsap/all';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
@@ -25,7 +24,6 @@ gsap.registerPlugin(ScrollToPlugin);
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     RouterModule.forRoot([], {
       anchorScrolling: 'disabled',
       onSameUrlNavigation: 'reload',
