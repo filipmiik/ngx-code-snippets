@@ -75,7 +75,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
               - Power3.easeOut: Easing function from GSAP library
               */
               gsap.to(window, {
-                duration: Math.max(0.81, Math.log((fragElement.offsetTop - window.scrollY) / 2000)),
+                duration: Math.max(0.81, Math.log(Math.abs(fragElement.offsetTop - window.scrollY) / 2000)),
                 scrollTo: id,
                 ease: Power3.easeOut
               });
